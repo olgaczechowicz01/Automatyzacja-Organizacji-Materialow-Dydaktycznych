@@ -1,4 +1,3 @@
-
 import io
 import os
 import google.auth
@@ -13,7 +12,7 @@ from googleapiclient.http import MediaIoBaseDownload, MediaFileUpload
 from PyPDF2 import PdfMerger
 
 
-# 1. Creating necessary functions: 
+# 1. Created the necessary functions: 
 
 def get_credentials():
     """Function that creates user credentials necessary for authorization."""
@@ -137,7 +136,7 @@ def pdf_merge(pdf_list, merged_file_name):
     merger.close()
 
 
-# 2. Executing the goal of gathering specific list of PDF files, subsequently mergint them
+# 2. Executing the goal of gathering specific list of PDF files, then merging them
 # and lastly downloading the merged PDF file. 
 
 if __name__ == '__main__':
@@ -168,6 +167,6 @@ if __name__ == '__main__':
         get_file(copy['id'], copy['title'])
         copy_titles.append(copy['title'])
 
-    merged_slides_name = 'Czas Psychologiczny Slajdy scalone.pdf'
+    merged_slides_name = 'Czas psychologiczny slajdy scalone.pdf'
     pdf_merge(copy_titles, merged_slides_name)
     print(f'Merged PDF saved as {merged_slides_name}.')
